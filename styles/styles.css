@@ -1,0 +1,398 @@
+/* A reusable general css spreadsheet that can be attached and used as a damn fine starting point. I dub it:
+SHIBUYA;SIMPLE 
+
+(Perhaps more iterations of this will come after I learn even more CSS. Hence the ;simple. To differentiate it from future versions)*/
+
+/* This is my first formal-ish reusable comprehensive web style. Inspired by the simple, elegent appearance of a fictional news site in a certain VN whose sountrack I listen to a lot.*/
+/*Design Philosophy: clear contrast without being harsh, black and white only really (with shades of grey), plenty of room for elements. A pristine modern dark look that achieves both visual comfort and visual appeal. It must be able to resize, and lastly, it should be easy to use, and should adapt default HTML as well as semantic HTML nicely.*/
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v29/KFOkCnqEu92Fr1Mu51xIIzIXKMny.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51S7ACc6CsTYl4BO.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v29/KFOjCnqEu92Fr1Mu51TzBic6CsTYl4BO.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #000;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #CBCBCB;
+}
+
+/* Default element styles */
+
+
+/* 
+
+#CCC is essentially the standard color. Not too harsh but still easily readable. Everything less is of lesser importance/isn't going to be read for as long. Anything more is intended to stand out more.
+
+*/
+
+p{
+    font-weight: 500;
+    font-size: 11pt;
+    color: #CBCBCB;
+    margin: 15px 7px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+ }
+
+h2,h3,h4,h5,h6{
+    /* text-align:center; */
+    font-weight: 700;
+    width: fit-content;
+    /* margin: 7px auto; */
+    text-align: left;
+    margin: 7px;
+}
+
+h2{
+    color:#DDD;
+    font-size:21pt;
+    margin:15px auto;
+    text-align: center;
+}
+
+h3,h4,h5,h6 {
+    /* text-align: left;
+    margin: 7px; */
+}
+h3{
+    color:#AAA;
+    font-size: 16pt;
+}
+
+h4{
+    color: #999;
+    font-size:14pt;
+}
+
+h5{
+    color: #888;
+    font-size:12pt;
+}
+
+h6{
+    color:#777;
+    font-size: 11pt;
+}
+
+hr{
+    color: #DDD;
+}
+
+ul, ol {
+    color: #DEDEDE;
+    font-weight: 500;
+    margin: 0.5vw;
+    padding: 0 2vw;
+}
+
+/*Reduce the intensity of <p> tags after very dull headings, because the text probably isn't important if it's under an h4-h6. Might be a bad idea idk.*/
+
+h4+p{
+    color: #BBB;
+}
+
+h5+p{
+    color: #AAA;
+}
+
+h6+p{
+    color: #999;
+}
+
+/* Inline text tags */
+
+a{
+    color: #96e7e7;
+    font-style: italic;
+    font-weight: 400;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover{
+    color:#6aa1a1;
+}
+
+a:active{
+    color:#446868;
+}
+
+strong{
+    color: #EEE;
+    font-weight:700;
+}
+
+/* End inline text tags */
+
+/* End default element styles */
+
+
+
+header{
+    background-color: #EEE;
+    color: black;
+    padding: 10px 0; 
+    height:7vh;
+    position: sticky;
+    top:0;
+    min-height:60px;
+    margin: 0;
+}
+
+h1{
+    font-size: 30pt;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    font-weight: 700;
+    font-size: 30pt;
+
+}
+
+/* Nav styles */
+nav{
+    border-top: 1px solid #000;
+    background-color: #EEE;
+    color:#777;
+    font-size: 16pt;
+    text-align: center;
+    padding-bottom: 5px;
+    position: sticky;
+    top: max(7vh,60px);
+    margin: 0;
+}
+
+nav li{
+    display: inline-block;
+    color: #888;
+}
+
+nav li+li::before{
+    content: "| "
+}
+
+nav a{
+    text-decoration: none;
+    color: #888;
+}
+
+nav a:hover{
+    color: #555;
+}
+
+nav a:active{
+    color: #333;
+}
+
+/* End nav style */
+
+
+
+/* hr divs */
+div{
+    margin: 10px auto;
+}
+
+div.small-hr-div{
+    width:40px;
+    margin: 45px auto;
+}
+
+div.med-hr-div{
+    width: 60px;
+}
+/* End hr divs */
+
+/* Main Styles */
+
+main{
+    padding: 25px;
+    background-color: #101010;
+    width: 78vw;
+    min-width:200px;
+    margin:0 auto;
+    border: 0px solid white;
+}
+
+main article{
+    background-color: #191919;
+    width: 85%;
+    border: 1px solid #888;
+    margin: 15px auto;
+    padding: 10px;
+    max-width: 999px;
+    border-radius: 5px;
+
+
+}
+
+main h2, article h3, main h3, main h4, main h5, main h6, main p{
+    text-align: center;
+    margin: 7px auto;
+}
+
+main ul, main ol {
+    width: fit-content;
+    margin: 0.5vw auto;
+}
+
+main article p{
+    font-weight: 400;
+    margin: 10px 2%;
+    text-align: left;
+    color: #DDD;
+    font-size: 12pt;
+}
+
+
+/* Button styles */
+.button{
+    width: clamp(50px,100px,300px);
+    /* min-width:100px;
+    height: 34px; 
+    max-width: 300px; */
+    overflow: hidden;
+    font-size: 12pt;
+    color: #FFF;
+    border: 1px solid white;
+    background-color: #131313;
+    cursor: pointer;
+    border-radius: 10px;
+    text-align:center;
+    padding: 0.5rem 0;
+    font-weight: 700;
+    margin-top: 30px;
+    text-decoration-skip-ink: all;
+    font-style: normal;
+}
+
+.no-underline a{
+    text-decoration: none;
+}
+
+/* .button span{
+    
+} */
+
+.button:hover{
+    background-color: #666;
+    transition: background-color 0.2s;
+}
+
+.button:active{
+    transition: background-color 0s;
+    background-color: #999;
+}
+
+/* End button styles */
+
+/* Heading Styles */
+
+/* End heading styles */
+
+img{ /* width and height are to be overridden on an image-by-image basis. These defaults just prevent a large image from blowing a page up.*/
+    border:2px solid white;
+    border-radius: 3px;
+    width: 400px;
+    height: 400px; 
+}
+
+/* Aside Styles */
+
+aside{
+    display: inline-block; /*Will have to update once I learn CSS grid/flexbox/that new stuff.*/
+    background-color: #101010;
+
+}
+
+/* End Aside Styles */
+
+/* Footer Styles */
+
+footer{
+    border-top: 1px solid #DDD;
+    padding: 25px;
+    background-color: #030303;
+    margin:0 auto;
+    text-align: center;
+}
+
+footer h2, footer h3, footer h4, footer h5, footer h6{
+    text-align: center;
+    margin: 14px auto 0 auto;
+}
+
+footer div{ /*If you want to have things side-by-side in the footer, put them in divs. If you don't, either don't put them in divs -- or give them a class and assign that div to a class whose display property overrides this.*/
+    display: inline-block;
+}
+
+footer p{
+    text-align: center;
+    margin: 7px auto;
+    font-size: smaller;
+}
+
+footer ul{
+    display: inline-block;
+    text-align: left;
+    padding:15px;
+
+}
+
+/* End footer styles */
