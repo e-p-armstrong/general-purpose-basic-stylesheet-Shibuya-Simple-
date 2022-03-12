@@ -71,6 +71,8 @@ body{
     background-color: #000;
     font-family: 'Roboto', Arial, sans-serif;
     color: #CBCBCB;
+    margin:0;
+    padding:0;
 }
 
 /* Default element styles */
@@ -78,7 +80,7 @@ body{
 
 /* 
 
-#CCC is essentially the standard color. Not too harsh but still easily readable. Everything less is of lesser importance/isn't going to be read for as long. Anything more is intended to stand out more.
+#CBCBCB is essentially the standard color. Not too harsh but still easily readable. Everything less is of lesser importance/isn't going to be read for as long. Anything more is intended to stand out more.
 
 */
 
@@ -103,13 +105,8 @@ h2{
     color:#DDD;
     font-size:21pt;
     margin:15px auto;
-    text-align: center;
 }
 
-h3,h4,h5,h6 {
-    /* text-align: left;
-    margin: 7px; */
-}
 h3{
     color:#AAA;
     font-size: 16pt;
@@ -134,11 +131,49 @@ hr{
     color: #DDD;
 }
 
+/* #DEDEDE is the color of reasonable importance. #EEE is the color of most importance besides the cyan-esq ones. #CBCBCB is standard. Things like #AAA and lower are various stylistic less-important things: set things equivalent to the color whose heading its importance it matches most closely.*/
+
 ul, ol {
     color: #DEDEDE;
     font-weight: 500;
     margin: 0.5vw;
     padding: 0 2vw;
+}
+
+details{
+    margin:0.5vw;
+    padding: 0.2vw;
+    /* border-radius:3px; */
+    /* border: 1px solid #DDD; */
+    color: #999;
+    font-weight: 400;
+    /* text-decoration: underline; */
+    font-style: italic;
+    cursor: pointer;
+    width:fit-content;
+}
+
+summary{
+    padding: 10px;
+    /* font-weight: 700; */
+    color: #EEE;
+    font-weight: 500;
+    text-decoration: underline;
+    
+
+}
+
+section{
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    padding: 1vw;
+    margin: 20px;
+    /* margin: 20px 3%; */ /*arguably looks better, but doing this forces people into my style more. Having a flat 20px margin means that the stylesheet works better with typical, left-aligned html. */
+}
+
+/* Makes the first line after a br be a higher weight */
+br+::first-letter{
+    font-weight: 700;
 }
 
 /*Reduce the intensity of <p> tags after very dull headings, because the text probably isn't important if it's under an h4-h6. Might be a bad idea idk.*/
@@ -154,6 +189,8 @@ h5+p{
 h6+p{
     color: #999;
 }
+
+
 
 /* Inline text tags */
 
@@ -178,21 +215,50 @@ strong{
     font-weight:700;
 }
 
+mark {
+    background-color:rgba(255,255,0,0.9);
+}
+
+time{
+    text-transform: underline;
+    color: #DDD; /*If you're using the time tag you clearly want it marked out boldly*/
+    font-weight: 700;
+}
 /* End inline text tags */
 
+figure{ /*Literally copy-pasted and modified from MDN until I complete the flexbox lesson myself. Just wanted to get this done.*/
+    /* border: 2px solid #DDD;
+    border-radius: 2px; */
+    /* display: flex;
+    flex-flow: column; */
+    /* padding: 2px; */
+    max-width: 400px;
+    margin: auto;
+}
+
+figcaption{
+    padding:5px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+figure > img {
+    max-width: 400px;
+    max-height: 400px; /*Meant to be overriden on an image-by-image basis, here just so things don't blow up*/
+}
+
 /* End default element styles */
-
-
 
 header{
     background-color: #EEE;
     color: black;
-    padding: 10px 0; 
-    height:7vh;
+    padding: 10px 0;
+    height: 7vh; /* Maybe find way with fit-content/max content and max()/min() to get the header to resize depending on the title*/
+    min-height: 50px;
     position: sticky;
     top:0;
     min-height:60px;
-    margin: 0;
+    margin: 0 !important;
 }
 
 h1{
@@ -276,7 +342,7 @@ main article{
     border: 1px solid #888;
     margin: 15px auto;
     padding: 10px;
-    max-width: 999px;
+    max-width: 1000px;
     border-radius: 5px;
 
 
@@ -301,6 +367,13 @@ main article p{
 }
 
 
+main section{
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    padding: 1vw;
+    /* margin: 0 10px; */
+}
+
 /* Button styles */
 .button{
     width: clamp(50px,100px,300px);
@@ -310,7 +383,7 @@ main article p{
     overflow: hidden;
     font-size: 12pt;
     color: #FFF;
-    border: 1px solid white;
+    border: 1px solid #FFF;
     background-color: #131313;
     cursor: pointer;
     border-radius: 10px;
@@ -347,17 +420,30 @@ main article p{
 /* End heading styles */
 
 img{ /* width and height are to be overridden on an image-by-image basis. These defaults just prevent a large image from blowing a page up.*/
-    border:2px solid white;
+    border:2px solid #DDD;
     border-radius: 3px;
     width: 400px;
     height: 400px; 
 }
 
 /* Aside Styles */
-
+/* Improve the implementation of this to make it always-safe and dependant on article size at some point */
+/*Will probably end up using some of the stuff like CSS grid for that */
 aside{
-    display: inline-block; /*Will have to update once I learn CSS grid/flexbox/that new stuff.*/
+    box-sizing: content-box;
     background-color: #101010;
+    max-width: 60%;
+    max-height: 13vh;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    float: right;
+    padding: 0.5vw;
+    overflow: auto;
+    font-style: italic;
+    /* width: min(fit-content,20%);
+    height: min(fit-content,20%); */
+
+
 
 }
 
@@ -396,3 +482,14 @@ footer ul{
 }
 
 /* End footer styles */
+
+/* Custom classes that might come in handy */
+
+.medium-width{
+    width: 50% /*Add more to this. Maybe make it vw-based.*/
+}
+
+.align-left{
+    margin:10px;
+    text-align:left;
+}

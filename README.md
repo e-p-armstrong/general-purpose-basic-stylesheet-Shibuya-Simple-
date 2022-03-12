@@ -1,0 +1,6 @@
+#A Simple Starting Point
+
+A small project I made while in the midst of Codecademy's "full stack engineer career path"'s HTML/CSS section. This stylesheet (with an attached demo html file) is meant to be a good, generic stylesheet that I can start with when making a new webpage. The color scheme intends to be at once readable, minimalist, and stylish; the rules work almost entirely with default tags, only relying on a special class in one case (buttons), meaning that this can be applied to almost any page with ease. Plain HTML looks alright using this stylesheet, and all the semantic HTML tags I could think of (even things like <time>!) have been customized intensely. When proper semantic HTML is used, a page looks very fancy (at least by my learner's standards!) Try taking a look at demo.html to see this stylesheet in action!
+
+
+This is the largest CSS/HTML project I've done as of 11/03/2022, so I felt like it needed a name. I don't know if generic stylesheets are usually given names (in fact I don't know if people usually make generic stylesheets like this at all) but I gave it the name "Shibuya;Simple", referencing a fictional website whose theme and color scheme inspired my design at the beginning.
